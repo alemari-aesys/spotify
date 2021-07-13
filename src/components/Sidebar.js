@@ -16,9 +16,8 @@ import SearchIcon from '@material-ui/icons/Search';
 import LibraryMusicIcon from '@material-ui/icons/LibraryMusic';
 import FavoriteIcon from '@material-ui/icons/Favorite';
 import Button from '@material-ui/core/Button';
-import axios from "axios";
 import { useDispatch, useSelector } from "react-redux";
-import { getArtists, getPlaylists, getPodcasts } from '../redux/reducers/AppBarReducer';
+import { getArtists, getPlaylists, getPodcasts, getAlbums } from '../redux/reducers/AppBarReducer';
 
 const drawerWidth = 240;
 
@@ -60,7 +59,7 @@ export default function PermanentDrawerLeft() {
                 <Button variant="contained" onClick={() => {dispatch(getPlaylists())}}>Playlist</Button>
                 <Button style={{marginLeft: "10px"}} variant="contained" onClick={() => {dispatch(getPodcasts())}} >Podcast</Button>
                 <Button style={{marginLeft: "10px"}} variant="contained" onClick={() => {dispatch(getArtists())}}>Artisti</Button>
-                <Button style={{marginLeft: "10px"}} variant="contained">Album</Button>
+                <Button style={{marginLeft: "10px"}} variant="contained" onClick={() => {dispatch(getAlbums())}}>Album</Button>
             </Toolbar>
         </AppBar>
         <Drawer
